@@ -134,7 +134,7 @@ helm upgrade --install streamingapp helm/streamingapp \
 | `/api/admin` | admin-svc:3003 |
 | `/api/chat` | chat-svc:3004 |
 
-The Nginx Ingress Controller is exposed through an AWS LoadBalancer Service. A request to `/` returned HTTP 200. Requests to backend base paths reached Express and returned application-level `Cannot GET` responses where no base GET handler exists, proving that Ingress routed traffic to the intended backend rather than its default backend.
+The Nginx Ingress Controller is exposed through an AWS LoadBalancer Service. Separate Ingress resources preserve the Streaming API path while rewriting Auth, Admin and Chat prefixes to their internal /api routes. External health, streaming and authenticated verification requests returned HTTP 200.
 
 ## Scaling and Rolling Updates
 
@@ -180,6 +180,11 @@ A CloudWatch alarm named `StreamingApp-High-Node-CPU` monitors the Container Ins
 - [x] Auth rolling update succeeded
 - [x] CloudWatch Agent and Fluent Bit are Running
 - [x] CloudWatch CPU alarm created
+- [x] Auth registration returned HTTP 201
+- [x] Login and JWT cookie generation succeeded
+- [x] Protected authentication endpoint returned HTTP 200
+- [x] Admin, Chat and Streaming APIs returned HTTP 200 through Ingress
+- [x] End-to-end smoke test passed
 
 ## Troubleshooting Notes
 
