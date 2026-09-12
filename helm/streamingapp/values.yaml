@@ -1,0 +1,56 @@
+global:
+  registry: 701043845137.dkr.ecr.ap-south-1.amazonaws.com
+  imageTag: "1.0.0"
+  imagePullPolicy: IfNotPresent
+
+services:
+  auth:
+    image: streaming-auth
+    port: 3001
+    replicas: 2
+  streaming:
+    image: streaming-stream
+    port: 3002
+    replicas: 2
+  admin:
+    image: streaming-admin
+    port: 3003
+    replicas: 2
+  chat:
+    image: streaming-chat
+    port: 3004
+    replicas: 2
+  frontend:
+    image: streaming-frontend
+    port: 80
+    replicas: 2
+
+config:
+  mongoDatabase: streamingapp
+  clientUrls: "http://streamingapp.local"
+  awsRegion: ap-south-1
+  awsS3Bucket: ""
+  awsCdnUrl: ""
+  streamingPublicUrl: "http://streamingapp.local/api/streaming"
+
+secrets:
+  jwtSecret: change-me-before-production
+  awsAccessKeyId: ""
+  awsSecretAccessKey: ""
+
+mongo:
+  image: mongo:6
+  storageSize: 5Gi
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 96Mi
+  limits:
+    cpu: 300m
+    memory: 384Mi
+
+ingress:
+  enabled: true
+  className: nginx
+  host: streamingapp.local
