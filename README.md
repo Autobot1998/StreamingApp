@@ -5,6 +5,12 @@ Complete Docker, Jenkins, ECR, EKS, Helm, Ingress, scaling and CloudWatch implem
 [View Project Documentation](docs/PROJECT_DOCUMENTATION.md)
 
 
+
+## Project Execution Report
+
+[Download the complete structured Word report](docs/evidence/StreamingApp_Container_Orchestration_Submission.docx)
+
+
 # StreamingApp
 
 Stream premium video content, host live watch parties, and manage your catalogue with a modern microservice architecture. The platform now ships with a production-ready admin portal, real-time chat, S3-backed adaptive streaming, and a redesigned cinematic frontend experience.
