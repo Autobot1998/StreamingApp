@@ -6,22 +6,27 @@ global:
 services:
   auth:
     image: streaming-auth
+    tag: "1.0.0"
     port: 3001
     replicas: 2
   streaming:
     image: streaming-stream
+    tag: "1.0.0"
     port: 3002
     replicas: 2
   admin:
     image: streaming-admin
+    tag: "1.0.0"
     port: 3003
     replicas: 2
   chat:
     image: streaming-chat
+    tag: "1.0.0"
     port: 3004
     replicas: 2
   frontend:
     image: streaming-frontend
+    tag: "1.0.0"
     port: 80
     replicas: 2
 

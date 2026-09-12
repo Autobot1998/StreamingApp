@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: {{ $name }}
-          image: "{{ $.Values.global.registry }}/{{ $svc.image }}:{{ $.Values.global.imageTag }}"
+          image: "{{ $.Values.global.registry }}/{{ $svc.image }}:{{ default $.Values.global.imageTag $svc.tag }}"
           imagePullPolicy: {{ $.Values.global.imagePullPolicy }}
           ports:
             - name: http
