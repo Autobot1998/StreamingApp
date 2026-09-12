@@ -130,3 +130,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+#IgnoreFiles
+streamingapp-kubeconfig
+rendered.yaml
+compose-reference.txt
+helm/streamingapp-scaffold/
