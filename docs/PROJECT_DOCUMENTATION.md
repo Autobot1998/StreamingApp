@@ -84,7 +84,7 @@ The root `Jenkinsfile` defines the following stages:
 
 The Jenkins IAM identity is restricted to ECR authentication and push/pull operations on repositories matching `streaming-*`. Administrator credentials are not stored in Jenkins. Poll SCM checks the repository every five minutes and starts a pipeline when a commit changes.
 
-Validated CI result: all five stages succeeded and five images were pushed with tag `1.0.4`.
+Validated CI result: all five stages succeeded and five images were pushed with tag `1.0.5`.
 
 ## EKS Environment
 
