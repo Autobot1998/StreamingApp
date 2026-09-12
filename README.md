@@ -1,3 +1,10 @@
+## DevOps Deployment Documentation
+
+Complete Docker, Jenkins, ECR, EKS, Helm, Ingress, scaling and CloudWatch implementation:
+
+[View Project Documentation](docs/PROJECT_DOCUMENTATION.md)
+
+
 # StreamingApp
 
 Stream premium video content, host live watch parties, and manage your catalogue with a modern microservice architecture. The platform now ships with a production-ready admin portal, real-time chat, S3-backed adaptive streaming, and a redesigned cinematic frontend experience.
